@@ -6,22 +6,21 @@ import { cardParams } from "../components/card"
 
 
 const teste = {
-  name:"GameCube",
-  img:'https://m.media-amazon.com/images/I/41wEYtpZb3L._AC_SY1000_.jpg',
-  slug:'system',
+  name:"Skies of Arcadia",
+  img:'https://www.gamecash.fr/thumbnail-400-450/skies-of-arcadia-legends-us-e70705.jpg',
+  slug:'game',
   releasedDate:2001,
   publisher:"Nintendo",
   generation:6,
   rate:3,
-  }
+}
 
 const IndexPage = () => {
   return (
     <>
     <Layout>
-      <h1>Sistemas</h1>
+      <h1>Games</h1>
       <div className="cards">
-        <Card cardParams={teste}></Card>
         <Card cardParams={teste}></Card>
         <Card cardParams={teste}></Card>
         <Card cardParams={teste}></Card>

@@ -1,0 +1,21 @@
+/* CSS GLOBAL */
+
+/* paleta,
+#B23850
+#3B8BEB
+#E7E3D4
+#C4DBF6
+#8590AA
+
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body, p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* background-color: #3B8BEB; */
+    background-color: #f1faeeff;
+}
