@@ -1,17 +1,17 @@
 import { Link } from "gatsby";
 import React from "react";
-
+import { graphql, HeadFC, PageProps } from "gatsby"
 
 const Header =()=>{
 return (
 
         <header>
                 <div className="flex-container">
-                <h3 className="menuItem"><Link>Home</Link></h3>
+                <h3 className="menuItem"><Link to="/">Home</Link></h3>
                 <h3 className="menuItem">Systems</h3>
-                <h3 className="menuItem">Top Games</h3>
-                <h3 className="menuItem">About</h3>
-                <h3 className="menuItem">Contact Us</h3>
+                <h3 className="menuItem"><Link to="/top">Top Games</Link></h3>
+                <h3 className="menuItem"><Link to="/about">About</Link></h3>
+                <h3 className="menuItem"><Link to="/contact">Contact Us</Link></h3>
                 </div>
 
 <style jsx>
@@ -35,6 +35,8 @@ return (
                         margin-left:20px;
                         
                 }
+                
+
                 
         `
 }
