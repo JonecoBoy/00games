@@ -4,7 +4,8 @@ import Layout from "../../layout/Layout"
 import Card from "../../components/card"
 import { cardParams } from "../../components/card"
 
-
+import Button from '@mui/material/Button';
+import { Alert } from "@mui/material"
 
 
 type DataProps = {
@@ -27,7 +28,7 @@ systemInfo.html = (data as any).systemInfo.html;
 
   return (
     <>
-    <Layout>
+    <Layout> 
     <div className="system-info">
         <img className="system-image" src={systemInfo.img}></img>
         <div className="system-data">
@@ -61,7 +62,7 @@ systemInfo.html = (data as any).systemInfo.html;
         {
          !games || games.length<1 
          ?
-         <div className="dangerAlert"> No Games in Database</div>
+         <Alert severity="error"> No Games for this System in the Database!</Alert>
          :
          games.map((item)=>{
           const game = {...item.frontmatter,...item.fields}
