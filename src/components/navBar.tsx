@@ -4,20 +4,13 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
+
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { useStaticQuery,graphql, Link, PageProps } from 'gatsby';
-import { Button, Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
-import { StarBorder } from '@mui/icons-material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import { useStaticQuery,graphql, Link } from 'gatsby';
+import { Collapse, Divider} from '@mui/material';
 
+import {ExpandMore,ExpandLess} from '@mui/icons-material';
 
 export default function NavBar() {
 
@@ -31,10 +24,12 @@ export default function NavBar() {
       name
       developer
       generation
+      fields {
+              slug
+            }
     }
     fieldValue
     totalCount
-    
   }
     }
   }
@@ -85,7 +80,7 @@ const [open, setOpen] = React.useState(
 
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1}}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -107,11 +102,13 @@ const [open, setOpen] = React.useState(
                 aria-haspopup="true"
                 onClick={handleMenu}
                 color="inherit"
+                
               >
                 Systems
               </IconButton>
               <Menu
                 id="menu-appbar"
+                
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
@@ -130,12 +127,12 @@ const [open, setOpen] = React.useState(
                   return(<div key={index}>
                     
                   
-                  <MenuItem onClick={()=>handleClick(index)}>{item.fieldValue}</MenuItem>
+                  <MenuItem onClick={()=>handleClick(index)}>{item.fieldValue} {open[index]?<ExpandLess/>:<ExpandMore/>}</MenuItem>
                 <Collapse key={`colapse-${index}`} in={open[index]}>
                   {item.nodes.map(
                     (system:any)=>{
                     return (
-                      <MenuItem key={index} onClick={handleClose}>{`${system.developer} ${system.name} `}</MenuItem>
+                      <MenuItem key={index} onClick={handleClose}><Link className='menuItem' to = {`/systems/${system.fields.slug}`}>{`${system.developer} ${system.name} `}</Link></MenuItem>
                     )
                   })}
                   
@@ -185,9 +182,7 @@ const [open, setOpen] = React.useState(
             <IconButton
             size="large"
             edge="start"
-            color="inherit"fields {
-              slug
-            }
+            color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
           >
@@ -210,6 +205,7 @@ const [open, setOpen] = React.useState(
         </Toolbar>
         
       </AppBar>
+
     </Box>
   );
  

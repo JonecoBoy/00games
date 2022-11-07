@@ -36,19 +36,19 @@ systemInfo.html = (data as any).systemInfo.html;
             <table className="system-table">
               <tbody>
               <tr>
-                <th>Publisher</th>
+                <th>Publisher: </th>
                 <td>{systemInfo.developer}</td>
               </tr>
               <tr>
-              <th>Release Date</th>
+              <th>Release Date: </th>
                 <td>{systemInfo.releaseDate}</td>
               </tr>
               <tr>
-              <th>Generation</th>
+              <th>Generation: </th>
                 <td>{systemInfo.generation}</td>
               </tr>
               <tr>
-              <th>Rate</th>
+              <th>Rate: </th>
                 <td>{systemInfo.rate}</td>
               </tr>
               </tbody>
@@ -77,7 +77,8 @@ systemInfo.html = (data as any).systemInfo.html;
         
       </div>
       </Layout>
-    <style jsx>
+      {/* se nao meter global nao entra nada que pega o css pelo dangerous set */}
+    <style jsx global>
         {`
           .cards{
             display:flex;
@@ -86,20 +87,6 @@ systemInfo.html = (data as any).systemInfo.html;
             flex-wrap:wrap;
             margin-top:20px;
             
-          }
-          .dangerAlert{
-            display:flex;
-            width:90%;
-            background-color: #cc4726d6;
-            color:white;
-            min-height: 60px;
-            border-radius: 10px;
-            text-align:center;
-            vertical-align: middle;
-            margin:auto;
-            align-items:center;
-          justify-content:center;
-          margin-bottom: 20px;
           }
 
           .system-review {
@@ -112,6 +99,7 @@ systemInfo.html = (data as any).systemInfo.html;
       
             margin-bottom: 2rem;
             /* text-indent: 10px; */
+            
           }
           .system-info {
              text-align:center;
@@ -140,17 +128,17 @@ systemInfo.html = (data as any).systemInfo.html;
             border: 1px solid  rgba(40, 40, 50, 1);
           }
 
-          h3{
-            color: rgba(255, 255, 255, 1);
+          .system-review > h3{
+            color: rgba(255, 255, 255, 1)!important;
             text-transform: uppercase;
             background-color: rgba(81, 98, 213, 1);
             padding: 6px;
             padding-right: 10px;
             padding-left: 10px;
-            margin-bottom: 15px;
+            margin: 15px 0px 15px 0px;
             display: inline-block;
           }
-          p{
+          .system-review >p{
             margin-bottom:10px;
           }
 

@@ -4,17 +4,18 @@ name: "Playstation"
 developer: "Sony"
 releaseDate: "1994-11-05"
 generation: 5
-img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Sega-Saturn-Console-Set-Mk1.png/640px-Sega-Saturn-Console-Set-Mk1.png"
+img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/640px-PSX-Console-wController.png"
 logo: ""
 video: "https://www.youtube.com/watch?v=Dr7KeT7egH4"
 ---
 
-## Sony Playstation
+## Playstation
 
 ### sinopse
 Street Fighter Alpha: Warriors' Dreams, known as Street Fighter Zero[a] in Japan, Asia, South America, and Oceania, is a 2D arcade fighting game by Capcom originally released in 1995 for the CP System II hardware. It was the first all new Street Fighter game produced by Capcom since the release of Street Fighter II in 1991. The working title for the game was Street Fighter Legends.
 
 The game introduces several new features, expanding on the Super Combo system previously featured in Super Street Fighter II Turbo, with graphics drawn in a similar art style to the one Capcom employed in Darkstalkers and X-Men: Children of the Atom. The plot of Street Fighter Alpha is set after the original Street Fighter but before Street Fighter II and thus the game features younger versions of established characters, as well as characters from the original Street Fighter and Final Fight, and a few who are new to the series.
+
 
 ### Principais Jogos
 Street Fighter Alpha revamps the Super Combo system introduced in Super Street Fighter II Turbo by adding a three-level Super Combo gauge. Like in Super Turbo, the Super Combo gauge fills in as the player performs regular and special techniques. When the gauge reaches Level 1 or higher, the player can perform a Super Combo technique. The number of punch or kick buttons pressed simultaneously when performing a Super Combo determines the amount that will be used. In addition to Super Combos, the player can also perform a special counterattacking technique called an Alpha Counter (Zero Counter in the Japanese version) after blocking an opponent's attack, which consumes a level of the Super Combo Gauge.

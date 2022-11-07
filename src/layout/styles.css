@@ -32,3 +32,6 @@ a:link {
   a:hover {
     color: #b5d6fc;
   }
+  a.menuItem{
+    color:black;
+  }
