@@ -29,25 +29,28 @@ systemInfo.html = (data as any).systemInfo.html;
     <>
     <Layout>
     <div className="system-info">
-    <img className="system-image" src={systemInfo.img}></img>
-    <div className="system-data">
-    <div className="infoBox">
-                    <span className="title">Publisher: </span>
-                    <span>{systemInfo.developer}</span>
-            </div>
-            <div className="infoBox">
-                <span className="title">Release Date: </span>
-                <span>{systemInfo.releaseDate}</span>
-            </div>
-            <div className="infoBox">
-                <span className="title">Generation: </span>
-                <span>{systemInfo.generation}</span>
-            </div>
-            <div className="infoBox">
-                <span className="title">Rate: </span>
-                <span>{systemInfo.rate}</span>
-            </div>
-    </div>
+        <img className="system-image" src={systemInfo.img}></img>
+        <div className="system-data">
+
+            <table className="system-table">
+              <tr>
+                <th>Publisher</th>
+                <td>{systemInfo.developer}</td>
+              </tr>
+              <tr>
+              <th>Release Date</th>
+                <td>{systemInfo.releaseDate}</td>
+              </tr>
+              <tr>
+              <th>Generation</th>
+                <td>{systemInfo.generation}</td>
+              </tr>
+              <tr>
+              <th>Rate</th>
+                <td>{systemInfo.rate}</td>
+              </tr>
+          </table>
+      </div>
     </div>
       <div className="system-review" dangerouslySetInnerHTML={{__html:systemInfo.html}}></div>
 
@@ -107,21 +110,24 @@ systemInfo.html = (data as any).systemInfo.html;
             margin-bottom: 2rem;
             /* text-indent: 10px; */
           }
-
           .system-info {
-              display:flex;
-           
-              min-height:200px;
-              max-height:500px;
-              min-height:200px;
-              max-height:500px
+             text-align:center;
+              
+          }
+
+          .system-info img{
+     
+            max-width: 100%;
+              height: auto;
+              margin:auto;
           }
           .system-data{
               flex:1;
               display:flex;
               justify-content:space-evenly;
               text-align:left;
-              flex-direction:column;
+              flex-direction:row;
+              margin:20px 20px 20px 20px;
           }
 
           .info-box span{
@@ -186,11 +192,18 @@ systemInfo.html = (data as any).systemInfo.html;
           span:not(.title){
             font-size:1.4rem;
           }
+
+          .system-table th{
+            font-size:2.1em;
+          }
+          .system-table td{
+            font-size:1.4em;
+          }         
           
         `}
     </style>
 </>
-    
+    // por hover nos cards
   )
 
 }

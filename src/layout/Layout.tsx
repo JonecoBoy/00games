@@ -18,10 +18,9 @@ return(
             margin:50px;
             .main-content{
                 display:block;
+                min-width:300px;
             }
-            div.main-content > *{
-                margin:200px
-            }
+            
         `}
         
     </style>

@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 
@@ -6,11 +7,11 @@ return (
 
         <header>
                 <div className="flex-container">
-                <h3>Home</h3>
-                <h3>Sistemas</h3>
-                <h3>Top Jogos</h3>
-                <h3>Sobre</h3>
-                <h3>Contato</h3>
+                <h3 className="menuItem"><Link>Home</Link></h3>
+                <h3 className="menuItem">Systems</h3>
+                <h3 className="menuItem">Top Games</h3>
+                <h3 className="menuItem">About</h3>
+                <h3 className="menuItem">Contact Us</h3>
                 </div>
 
 <style jsx>
@@ -21,6 +22,7 @@ return (
                 color:white;
                 width:100%;
                 display:sticky;
+                min-width:400px;
         }
         .flex-container{
                 display: flex; 
@@ -29,7 +31,7 @@ return (
 
         }
 
-        h3 :not(:first-child){
+        h3.menuItem :not(:first-child){
                         margin-left:20px;
                         
                 }
