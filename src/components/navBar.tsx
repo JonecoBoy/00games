@@ -10,35 +10,18 @@ import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import { useStaticQuery,graphql, Link, PageProps } from 'gatsby';
-import { Divider } from '@mui/material';
+import { Button, Collapse, Divider, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
+import { StarBorder } from '@mui/icons-material';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
+import SendIcon from '@mui/icons-material/Send';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+
 
 export default function NavBar() {
-  const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
-  const [anchorE2, setAnchorE2] = React.useState<null | HTMLElement>(null);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAuth(event.target.checked);
-  };
-
-  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleMenu2 = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorE2(event.currentTarget);
-  };
-
-  const handleClose2 = () => {
-    setAnchorE2(null);
-  };
-
+  let newOpen =[];
   const data = useStaticQuery(graphql`
   query systemsQuery {
     allJson(sort: {fields: generation}) {
@@ -46,15 +29,60 @@ export default function NavBar() {
         nodes {
       type
       name
+      developer
       generation
     }
     fieldValue
+    totalCount
+    
   }
     }
   }
 `)
 
-const systemsGroups = data.allJson.group
+const systemsGroups = data.allJson.group;
+
+const [open, setOpen] = React.useState(
+  // criar um array todo com false para a quantidade de grupos da query de puxar os sistemas
+  Array.from({length: systemsGroups.length},()=>false)
+);
+
+  const handleClick = (index:number) => {
+    
+    setOpen(Array.from(open,(element,eIndex)=>{
+      if(eIndex == index)
+        return !element
+        else 
+        return element
+      
+    }));
+  };
+
+  
+  
+  const [auth, setAuth] = React.useState(true);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const [anchorE2, setAnchorE2] = React.useState<null | HTMLElement>(null);
+
+
+  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleMenu2 = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorE2(event.currentTarget);
+  };
+  
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleClose2 = () => {
+    setAnchorE2(null);
+  };
+
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -97,13 +125,25 @@ const systemsGroups = data.allJson.group
                 }}
               >
                 
-                {systemsGroups.map((item:any)=>{
+                {systemsGroups.map((item:any,index:number)=>{
                   
-                  return(<>
+                  return(<div key={index}>
                     
-                  <MenuItem onClick={handleClose}>{item.fieldValue}</MenuItem>
-                  <Divider sx={{ my: 0.5 }} />
-                  </>
+                  
+                  <MenuItem onClick={()=>handleClick(index)}>{item.fieldValue}</MenuItem>
+                <Collapse key={`colapse-${index}`} in={open[index]}>
+                  {item.nodes.map(
+                    (system:any)=>{
+                    return (
+                      <MenuItem key={index} onClick={handleClose}>{`${system.developer} ${system.name} `}</MenuItem>
+                    )
+                  })}
+                  
+                  </Collapse>
+                  {/* nao colocar a divisao se for o ultimo item */}
+                  {index == (systemsGroups.length-1) ? null :<Divider key={`divider-${index}`} sx={{ my: 0.5 }} />}
+                  
+                  </div>
                   )
                 })}
                 
@@ -135,7 +175,9 @@ const systemsGroups = data.allJson.group
                 onClose={handleClose2}
               >
                 <MenuItem onClick={handleClose2}>Profile</MenuItem>
-                <MenuItem onClick={handleClose2}>My account</MenuItem>
+                
+                
+                
               </Menu>
             </div>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}></Typography>
@@ -143,7 +185,9 @@ const systemsGroups = data.allJson.group
             <IconButton
             size="large"
             edge="start"
-            color="inherit"
+            color="inherit"fields {
+              slug
+            }
             aria-label="menu"
             sx={{ mr: 2 }}
           >
@@ -164,6 +208,7 @@ const systemsGroups = data.allJson.group
             </div>
           
         </Toolbar>
+        
       </AppBar>
     </Box>
   );

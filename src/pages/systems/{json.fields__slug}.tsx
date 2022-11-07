@@ -34,6 +34,7 @@ systemInfo.html = (data as any).systemInfo.html;
         <div className="system-data">
 
             <table className="system-table">
+              <tbody>
               <tr>
                 <th>Publisher</th>
                 <td>{systemInfo.developer}</td>
@@ -50,6 +51,7 @@ systemInfo.html = (data as any).systemInfo.html;
               <th>Rate</th>
                 <td>{systemInfo.rate}</td>
               </tr>
+              </tbody>
           </table>
       </div>
     </div>
@@ -64,10 +66,10 @@ systemInfo.html = (data as any).systemInfo.html;
          ?
          <Alert severity="error"> No Games for this System in the Database!</Alert>
          :
-         games.map((item)=>{
+         games.map((item,index)=>{
           const game = {...item.frontmatter,...item.fields}
           return(
-                  <Card cardParams={game}/>
+                  <Card key={index} cardParams={game}/>
                 )
         })
               
