@@ -6,31 +6,37 @@ export type cardParams={
 name:string;
 img: string;
 slug: string;
-releasedDate:number;
-publisher:string;
+releaseDate:number;
+developer:string;
 generation:number;
 rate:number;
+fields:any;
+genre?:string;
+screenshots?:Array<string>;
+logo?:string;
+video?:string;
 };
 
 const Card = ({cardParams}:{cardParams:cardParams})=>{
-    const {name,img,slug,releasedDate,publisher,generation,rate} = cardParams;
+    const {name,img,releaseDate,developer,generation,rate,slug,genre} = cardParams;
+    const path = `systems/${slug}`
 
 return (
-    <a className="card" href={slug}>
+    <a className="card" href={path}>
         <h2 className="title">{name}</h2>
         <img src={img}></img>
         <div className="info">
             <div className="infoBox">
+                    <p>Publisher: </p>
+                    <p>{developer}</p>
+            </div>
+            <div className="infoBox">
                 <p>Release Date: </p>
-                <p>{releasedDate}</p>
+                <p>{releaseDate}</p>
             </div>
             <div className="infoBox">
-                <p>Publisher: </p>
-                <p>{publisher}</p>
-            </div>
-            <div className="infoBox">
-                <p>Generation: </p>
-                <p>{generation}</p>
+                <p>genre: </p>
+                <p>{genre}</p>
             </div>
             <div className="infoBox">
                 <p>Rate: </p>
@@ -45,6 +51,7 @@ return (
             
                 .card{
                 max-width:25%;
+                
                 display:flex;
                 flex-direction:column;
                 background-color:#C4DBF6;
@@ -53,7 +60,15 @@ return (
                 text-decoration: none;
                 color:black;
                 font-size:1.35em;
+                justify-content:center;
+                text-align: center;
            }
+                }
+                .card img{
+                    margin: auto;
+                    margin-top: 20px;
+                    display: block;
+                    max-width:90%;
                 }
 
 
@@ -65,15 +80,18 @@ return (
                 }
                 
                 img{
-                    max-width:100%;
+                    max-width:250px;
                     margin:10px;
                     box-sizing: border-box;
+                    justify-content:center;
+                    text-align:center;
                 }
                 .info{
                     padding:1em;
                     justify-content: space-between;
                     flex-direction:column;
                     display:flex
+                    max-
                     
                 }
                 .info > span {
@@ -91,8 +109,9 @@ return (
                     
                     box-sizing: content-box;
                 }
-                .infoBox{
-                    display:flex;
+                .infoBox >p{
+                    display: inline-grid;
+                    max-width:100%;
                     justify-content: center;
                     
                 }

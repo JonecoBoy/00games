@@ -20,6 +20,7 @@ return (
                 background-color:#B23850;
                 color:white;
                 width:100%;
+                display:sticky;
         }
         .flex-container{
                 display: flex; 

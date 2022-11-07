@@ -8,17 +8,27 @@ const Layout =({children}:{children:ReactNode})=>{
 return(
     <>
     <Header/>
-    <body>{children}</body>
+    <div className="main-content">
+        {children}
+    </div>
     <Footer/>
 
     <style jsx>
         {`
             margin:50px;
+            .main-content{
+                display:block;
+            }
+            div.main-content > *{
+                margin:200px
+            }
         `}
+        
     </style>
     </>
 )
 
 }
+
 
 export default Layout

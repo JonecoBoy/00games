@@ -2,15 +2,24 @@ import * as React from "react"
 import type { HeadFC } from "gatsby"
 import Layout from "../layout/Layout"
 import Card from "../components/card"
-import { cardParams } from "../components/card"
 
+export type cardParams={
+  name:string;
+  img: string;
+  slug: string;
+  releaseDate:number;
+  developer:string;
+  generation:number;
+  rate:number;
+  fields:any;
+  };
 
 const teste = {
   name:"Skies of Arcadia",
   img:'https://www.gamecash.fr/thumbnail-400-450/skies-of-arcadia-legends-us-e70705.jpg',
   slug:'game',
   releasedDate:2001,
-  publisher:"Nintendo",
+  developer:"Nintendo",
   generation:6,
   rate:3,
 }

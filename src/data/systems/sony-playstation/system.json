@@ -1,0 +1,9 @@
+{
+        "type": "System",
+        "name":       "Playstation",
+        "developer":      "Sony",
+        "generation":    5,
+        "releaseDate":    1994,
+        "rate":    5,
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/640px-PSX-Console-wController.png"
+}

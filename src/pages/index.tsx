@@ -1,31 +1,34 @@
 import * as React from "react"
-import type { HeadFC } from "gatsby"
+import { graphql, HeadFC, PageProps } from "gatsby"
 import Layout from "../layout/Layout"
 import Card from "../components/card"
 import { cardParams } from "../components/card"
 
 
-const teste = {
-  name:"GameCube",
-  img:'https://m.media-amazon.com/images/I/41wEYtpZb3L._AC_SY1000_.jpg',
-  slug:'system',
-  releasedDate:2001,
-  publisher:"Nintendo",
-  generation:6,
-  rate:3,
+
+  type DataProps = {
+      allJson: {
+        nodes:[
+          {
+          system:cardParams
+        }
+      ]
+      }
   }
 
-const IndexPage = () => {
+const IndexPage = ({data} : PageProps<DataProps>) => {
+  const systems = data.allJson.nodes;
+
   return (
     <>
     <Layout>
       <h1>Sistemas</h1>
       <div className="cards">
-        <Card cardParams={teste}></Card>
-        <Card cardParams={teste}></Card>
-        <Card cardParams={teste}></Card>
-        <Card cardParams={teste}></Card>
-        <Card cardParams={teste}></Card>
+        {systems.map((item:any)=>{
+          let system:cardParams = item
+          system = {...item,...item.fields}
+          return <Card cardParams={system}></Card>
+        })}
       </div>
       </Layout>
     <style jsx>
@@ -48,5 +51,23 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+
+export const query = graphql`
+  query {
+    allJson(filter: {type: {eq: "System"}}) {
+      nodes {
+        name
+        rate
+        releaseDate
+        img
+        fields {
+        slug
+      }
+      }
+    }
+  }
+`
+
 
 export const Head: HeadFC = () => <title>00Games</title>

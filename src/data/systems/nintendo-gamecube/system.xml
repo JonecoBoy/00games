@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-- <system>
+<system>
   <name>GameCube</name>
   <developer>Nintendo</developer>
   <generation>6</generation>
   <realeaseDate>2001</realeaseDate>
   <rate>3</rate>
+  <img>https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/GameCube-Console-Set.png/640px-GameCube-Console-Set.png</img>
 </system>

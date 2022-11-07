@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-- <system>
+<system>
   <name>Saturn</name>
   <developer>Sega</developer>
   <generation>5</generation>
   <realeaseDate>1994</realeaseDate>
   <rate>5</rate>
+  <img>https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Sega-Saturn-Console-Set-Mk1.png/640px-Sega-Saturn-Console-Set-Mk1.png</img>
 </system>

@@ -38,23 +38,24 @@ const config: GatsbyConfig = {
         ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
-    `gatsby-transformer-yaml`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/data/`,
-      },
-    },
-    `gatsby-transformer-json`,
+      resolve: `gatsby-transformer-yaml`,
+      options:{
+      typeName: `Yaml`,
+    }
+    }, 
+
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/data/`,
-      },
-    },
+      resolve: `gatsby-transformer-json`,
+      options:{
+      typeName: `Json`,
+    }
+    }, 
+    
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        path: `./src/data`,
         // Footnotes mode (default: true)
         footnotes: true,
         // GitHub Flavored Markdown mode (default: true)
@@ -63,7 +64,14 @@ const config: GatsbyConfig = {
         plugins: [],
       },
     },
-  
+
+    `gatsby-transformer-xml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data`,
+      },
+    },
   ]
 }
 
