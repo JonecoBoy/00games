@@ -23,9 +23,9 @@ const Card = ({cardParams}:{cardParams:cardParams})=>{
     const {name,img,releaseDate,developer,generation,rate,slug,genre,type} = cardParams;
     let path = ``
     if(type==='System'){
-        path = `/systems/${slug}`
+        path = `systems/${slug}`
     }else if(type==='Game'){
-        path = `/games/${slug}`
+        path = `games/${slug}`
     }
     
 
