@@ -57,6 +57,7 @@ export const query = graphql`
   query {
     allJson(filter: {type: {eq: "System"}}) {
       nodes {
+        type
         name
         rate
         releaseDate

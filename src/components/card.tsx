@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 import { Url } from "url";
 
@@ -11,6 +12,7 @@ developer:string;
 generation:number;
 rate:number;
 fields:any;
+type:string;
 genre?:string;
 screenshots?:Array<string>;
 logo?:string;
@@ -18,11 +20,19 @@ video?:string;
 };
 
 const Card = ({cardParams}:{cardParams:cardParams})=>{
-    const {name,img,releaseDate,developer,generation,rate,slug,genre} = cardParams;
-    const path = `systems/${slug}`
+    const {name,img,releaseDate,developer,generation,rate,slug,genre,type} = cardParams;
+    let path = ``
+    if(type==='System'){
+        path = `/systems/${slug}`
+    }else if(type==='Game'){
+        path = `/games/${slug}`
+    }
+    
 
 return (
-    <a className="card" href={path}>
+    
+    <Link className="card" to={path}>
+    
         <h2 className="title">{name}</h2>
         <img src={img}></img>
         <div className="info">
@@ -46,12 +56,12 @@ return (
             </div>
         <div className="content"></div>
 
-        <style jsx>
+        <style jsx global>
             {`
             
-                .card{
+                .card {
                 max-width:25%;
-                
+                border-radius:20px;
                 display:flex;
                 flex-direction:column;
                 background-color:#C4DBF6;
@@ -77,6 +87,7 @@ return (
                 }
                 .title{
                     text-align:center;
+                    margin-top:10px;
                 }
                 
                 img{
@@ -122,7 +133,8 @@ return (
                 }
             `}
         </style>
-    </a>
+    </Link>
+    
 )
 
 }

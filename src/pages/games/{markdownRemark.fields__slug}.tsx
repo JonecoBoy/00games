@@ -1,16 +1,18 @@
 import * as React from "react"
-import { graphql, PageProps } from "gatsby"
+import { graphql, Link, PageProps } from "gatsby"
 import Layout from "../../layout/Layout";
+import {Undo} from '@mui/icons-material/';
 
 const gamesPage = ({data} : PageProps<any>) => {
-    const game = {...data.game.frontmatter}
-    game.fields ={...data.game.fields}
+    const game = {...data.game.frontmatter,...data.game.fields}
     game.html = data.game.html
-
+    debugger;
+    
     return(
         <>
         <Layout>
-        <h1>Skies of Arcadia</h1>
+        <Link to ={`/systems/${game.system}`}><button><Undo/>Back</button></Link>
+        <h1>{game.name}</h1>
           <div className="technical">
             <img src ={game.img}></img>
             <div className="text">
@@ -33,7 +35,7 @@ const gamesPage = ({data} : PageProps<any>) => {
     
           </div>
           </Layout>
-          <style jsx>
+          <style jsx global>
           {`
   
         .technical img{
