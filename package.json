@@ -10,8 +10,8 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "build": "gatsby build --prefix-path",
+    "serve": "gatsby serve --prefix-path",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit"
   },
