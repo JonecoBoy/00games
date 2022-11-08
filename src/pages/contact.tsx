@@ -51,14 +51,14 @@ const contact = ()=>{
     }}>
       <h1>Async Submit Validation</h1>
       <label htmlFor="username">First Name</label>
-      <input placeholder="Bill" {...register("username")} />
+      <input placeholder="Jonas" {...register("username")} />
 
       <label htmlFor="lastName">Last Name</label>
-      <input placeholder="Luo" {...register("lastName")} />
+      <input placeholder="Nunes" {...register("lastName")} />
 
       <label htmlFor="email">Email</label>
       <input
-        placeholder="bluebill1049@hotmail.com"
+        placeholder="joneco@joneco.com.br"
         type="text"
         {...register("email")}
       />
