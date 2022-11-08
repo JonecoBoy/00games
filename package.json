@@ -29,6 +29,7 @@
     "gatsby-transformer-yaml": "^4.24.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
+    "react-hook-form": "^7.39.1",
     "react-icons": "^4.6.0",
     "slug": "^8.2.2",
     "styled-jsx": "^3.0.2"

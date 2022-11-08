@@ -18,14 +18,15 @@ return (
                 </div>
 
 <style jsx>
-{
-        `
+{ `
         header{
                 color:white;
                 width:100%;
                 position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+                position: sticky;
+                box-sizing: content-box;
+                min-width:400px;
+                top: 0;
         }
         .flex-container{
                 display: flex; 
@@ -40,8 +41,7 @@ return (
                 
 
                 
-        `
-}
+        `}
 </style>
         </header>
 
