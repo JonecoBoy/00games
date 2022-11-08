@@ -32,7 +32,7 @@ const contact = ()=>{
                 console.log(response);
                 // quer dizer que foi
             }).catch((e)=>{
-                console.log(e);
+                console.log(e)
             })
             ;
                 
