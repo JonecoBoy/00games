@@ -55,7 +55,6 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        path: `./src/data`,
         // Footnotes mode (default: true)
         footnotes: true,
         // GitHub Flavored Markdown mode (default: true)
