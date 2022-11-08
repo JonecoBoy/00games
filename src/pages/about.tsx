@@ -7,7 +7,7 @@ const contact = ()=>{
   return (
     <Layout>
         <div className='background-form'>
-        About
+        About;
     </div>
     </Layout>
   );
