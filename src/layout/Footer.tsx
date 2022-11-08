@@ -11,9 +11,14 @@ const Footer =()=>{
 
         <style jsx>
             {`
+                footer{
                 background-color: #8590AA;
                 padding:20px;
-                min-width:400px;
+                min-width:525px;
+                display:block;
+                box-sizing: content-box;
+
+                                }
             `}
         </style>
 

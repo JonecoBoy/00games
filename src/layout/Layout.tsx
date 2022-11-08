@@ -15,8 +15,9 @@ return(
 
     <style jsx>
         {`
-            margin:50px;
+            
             .main-content{
+                margin:50px;
                 display:block;
                 min-width:300px;
             }

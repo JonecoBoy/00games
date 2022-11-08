@@ -1,11 +1,12 @@
 import * as React from "react"
-import { graphql, HeadFC, PageProps } from "gatsby"
+import { graphql, HeadFC, Link, PageProps } from "gatsby"
 import Layout from "../../layout/Layout"
 import Card from "../../components/card"
 import { cardParams } from "../../components/card"
 
-import Button from '@mui/material/Button';
+
 import { Alert } from "@mui/material"
+import { Star, StarHalf, StarOutline, Undo } from "@mui/icons-material"
 
 
 type DataProps = {
@@ -19,16 +20,21 @@ type DataProps = {
 }
 
 const IndexPage = ({data} : PageProps<DataProps>) => {
+
 const system = (data as any).system;
 const games:Array<any> = (data as any).games.nodes;
+const totalStars:number = 5;
 
 // retirar dos sub parametros
 const systemInfo = {...(data as any).systemInfo.frontmatter, ...(data as any).systemInfo.fields}
 systemInfo.html = (data as any).systemInfo.html;
 
+//COMPONENTIZAR
+
   return (
     <>
     <Layout> 
+      <Link to ="/"><button><Undo/>Back</button></Link>
     <div className="system-info">
         <img className="system-image" src={systemInfo.img}></img>
         <div className="system-data">
@@ -49,7 +55,15 @@ systemInfo.html = (data as any).systemInfo.html;
               </tr>
               <tr>
               <th>Rate: </th>
-                <td>{systemInfo.rate}</td>
+                <td>
+                  {Array.from({length:Math.floor(system.rate)},()=>{
+                    return <Star/>
+                  })}
+                  { system.rate % Math.floor(system.rate)? <StarHalf/>:null}
+                  {Array.from({length:totalStars - (Math.ceil(system.rate)) },()=>{
+                                      return <StarOutline/>
+                                    })}
+                </td>
               </tr>
               </tbody>
           </table>
