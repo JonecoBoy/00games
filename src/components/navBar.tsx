@@ -93,7 +93,6 @@ const [open, setOpen] = React.useState(
             <Link to="/"> 00Games</Link>
           </IconButton>
          
-          <Link to="/"> (TODO LOGO)</Link>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}></Typography>
             <div>
               <IconButton
@@ -147,7 +146,7 @@ const [open, setOpen] = React.useState(
               </Menu>
             </div>
             
-            <div>
+            {/* <div>
               <IconButton
                 size="large"
                 aria-controls="menu-appbar"
@@ -176,7 +175,7 @@ const [open, setOpen] = React.useState(
                 
                 
               </Menu>
-            </div>
+            </div> */}
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}></Typography>
             <div>
             <IconButton

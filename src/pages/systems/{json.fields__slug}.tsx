@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, HeadFC, Link, PageProps } from "gatsby"
+import { graphql, HeadFC, HeadProps, Link, PageProps } from "gatsby"
 import Layout from "../../layout/Layout"
 import Card from "../../components/card"
 import { cardParams } from "../../components/card"
@@ -7,6 +7,7 @@ import { cardParams } from "../../components/card"
 
 import { Alert } from "@mui/material"
 import { Star, StarHalf, StarOutline, Undo } from "@mui/icons-material"
+import { MetaHead } from "../../components/MetaHead"
 
 
 type DataProps = {
@@ -215,7 +216,13 @@ systemInfo.html = (data as any).systemInfo.html;
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>00Games</title>
+export const Head: HeadFC = ({ data }: HeadProps) => 
+ {
+  const { name , developer} = (data as any).system;
+  return <MetaHead title={`00Games - ${developer} ${name}`} description={`VideoGames Database for ${developer} ${name}`} />;
+  // colocar img no meta
+ }
+
 
 
 export const pageQuery = graphql`

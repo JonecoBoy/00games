@@ -1,7 +1,8 @@
 import * as React from "react"
-import { graphql, Link, PageProps } from "gatsby"
+import { graphql, HeadFC, HeadProps, Link, PageProps } from "gatsby"
 import Layout from "../../layout/Layout";
 import {Undo} from '@mui/icons-material/';
+import { MetaHead } from "../../components/MetaHead";
 
 const gamesPage = ({data} : PageProps<any>) => {
     const game = {...data.game.frontmatter,...data.game.fields}
@@ -129,6 +130,12 @@ const gamesPage = ({data} : PageProps<any>) => {
       </>
     )
 }
+
+export const Head: HeadFC = ({ data }: HeadProps) => 
+ {
+  const { name, system } = (data as any).json;
+  return <MetaHead title={`00Games - ${name}`} description={`${name} for ${system}`} />;
+ }
 
 export const pageQuery = graphql`
   query ($id: String!) {

@@ -1,6 +1,7 @@
-import { HeadFC } from 'gatsby';
+import { HeadFC, HeadProps } from 'gatsby';
 import * as React from 'react'
 import { useForm } from "react-hook-form";
+import { MetaHead } from '../components/MetaHead';
 import Layout from '../layout/Layout';
 
 const contact = ()=>{
@@ -219,4 +220,8 @@ const contact = ()=>{
   );
 }
 export default contact
-export const Head: HeadFC = () => <title>00Games - Contact Us</title>
+export const Head: HeadFC = ({ data }: HeadProps) => 
+ {
+  const { name , developer} = (data as any).system;
+  return <MetaHead title={`00Games - Contact Us`} description={`VideoGames Database contact page`} />;
+ }

@@ -19,6 +19,7 @@ return(
             .main-content{
                 margin:50px;
                 display:block;
+                min-height: 100vh;
                 min-width:300px;
             }
             

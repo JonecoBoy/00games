@@ -1,8 +1,9 @@
 import * as React from "react"
-import { graphql, HeadFC, PageProps } from "gatsby"
+import { graphql, HeadFC, HeadProps, PageProps } from "gatsby"
 import Layout from "../layout/Layout"
 import Card from "../components/card"
 import { cardParams } from "../components/card"
+import { MetaHead } from "../components/MetaHead"
 
 
 
@@ -71,4 +72,7 @@ export const query = graphql`
 `
 
 
-export const Head: HeadFC = () => <title>00Games</title>
+export const Head: HeadFC = ({ data }: HeadProps) => 
+ {
+  return <MetaHead title={`00Games`} description={`VideoGames Database`} />;
+ }

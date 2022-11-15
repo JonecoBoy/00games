@@ -1,10 +1,17 @@
 import type { GatsbyConfig } from "gatsby"
 
+const pathPrefix = "/00games";
+
 const config: GatsbyConfig = {
   pathPrefix: `00games`,
   siteMetadata: {
     title: `00Games`,
-    siteUrl: `https://www.yourdomain.tld`,
+    description: `DataBase for video-games`,
+    lang: `en-us`,
+    image: `${pathPrefix}/icon.png`,
+    keywords: ["Instagram", "Clone", "Projeto", "Infnet"],
+    siteUrl: `https://www.00games.com.br`,
+    pathPrefix,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -73,6 +80,22 @@ const config: GatsbyConfig = {
         path: `./src/data`,
       },
     },
+
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f1faeeff`,
+        theme_color: `#3B8BEB`,
+        display: `standalone`,
+        icon: `src/images/icon.png`
+      },
+    },
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
+
   ]
 }
 

@@ -13,10 +13,11 @@ const Footer =()=>{
             {`
                 footer{
                 background-color: #8590AA;
-                padding:20px;
-                min-width:525px;
-                display:block;
-                box-sizing: content-box;
+                padding:20px 0px 20px 0px;
+                width:100%;
+
+                position:relative;
+                bottom: 0;
 
                                 }
             `}

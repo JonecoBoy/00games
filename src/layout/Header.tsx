@@ -9,11 +9,6 @@ return (
 
         <header>
                 <div className="flex-container">
-                {/* <h3 className="menuItem"><Link to="/">Home</Link></h3>
-                <h3 className="menuItem">Systems</h3>
-                <h3 className="menuItem"><Link to="/top">Top Games</Link></h3>
-                <h3 className="menuItem"><Link to="/about">About</Link></h3>
-                <h3 className="menuItem"><Link to="/contact">Contact Us</Link></h3> */}
                 <NavBar/>
                 </div>
 
@@ -25,7 +20,7 @@ return (
                 position: -webkit-sticky; /* Safari */
                 position: sticky;
                 box-sizing: content-box;
-                min-width:400px;
+                min-width:450px;
                 top: 0;
         }
         .flex-container{
