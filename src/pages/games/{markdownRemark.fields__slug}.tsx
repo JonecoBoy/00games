@@ -7,7 +7,6 @@ import { MetaHead } from "../../components/MetaHead";
 const gamesPage = ({data} : PageProps<any>) => {
     const game = {...data.game.frontmatter,...data.game.fields}
     game.html = data.game.html
-    debugger;
     
     return(
         <>
@@ -133,7 +132,8 @@ const gamesPage = ({data} : PageProps<any>) => {
 
 export const Head: HeadFC = ({ data }: HeadProps) => 
  {
-  const { name, system } = (data as any).json;
+  const { name } = (data as any).game.frontmatter;
+  const { system } = (data as any).game.fields;
   return <MetaHead title={`00Games - ${name}`} description={`${name} for ${system}`} />;
  }
 

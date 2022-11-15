@@ -222,6 +222,6 @@ const contact = ()=>{
 export default contact
 export const Head: HeadFC = ({ data }: HeadProps) => 
  {
-  const { name , developer} = (data as any).system;
+
   return <MetaHead title={`00Games - Contact Us`} description={`VideoGames Database contact page`} />;
  }

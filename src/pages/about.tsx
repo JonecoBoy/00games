@@ -8,7 +8,7 @@ const contact = ()=>{
   return (
     <Layout>
         <div className='background-form'>
-        About;
+        TODO, pagina sobre com foto e infos do site
     </div>
     </Layout>
   );
@@ -16,7 +16,6 @@ const contact = ()=>{
 export default contact
 export const Head: HeadFC = ({ data }: HeadProps) => 
  {
-  const { name , developer} = (data as any).system;
   return <MetaHead title={`00Games - About`} description={`VideoGames Database about page`} />;
  }
 
