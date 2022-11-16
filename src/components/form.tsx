@@ -21,7 +21,7 @@ const Form = ({title}:{title:string})=>{
 
             }
         ).then((response)=>{
-
+            alert(`Menssage Sent!`)
             navigate('/',{
                 state: { message: 'Message Successfully sent!' }})
         }).catch((e)=>{

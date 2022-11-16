@@ -20,6 +20,7 @@ type DataProps = {
   ]
   }
 }
+// TODO pagination de jogos
 
 const IndexPage = ({data} : PageProps<DataProps>) => {
 
