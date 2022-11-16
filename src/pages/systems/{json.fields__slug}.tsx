@@ -8,6 +8,7 @@ import { cardParams } from "../../components/card"
 import { Alert } from "@mui/material"
 import { Star, StarHalf, StarOutline, Undo } from "@mui/icons-material"
 import { MetaHead } from "../../components/MetaHead"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 type DataProps = {
@@ -25,6 +26,7 @@ const IndexPage = ({data} : PageProps<DataProps>) => {
 const system = (data as any).system;
 const games:Array<any> = (data as any).games.nodes;
 const totalStars:number = 5;
+const image = getImage(system.systemImage);
 
 // retirar dos sub parametros
 const systemInfo = {...(data as any).systemInfo.frontmatter, ...(data as any).systemInfo.fields}
@@ -36,10 +38,11 @@ systemInfo.html = (data as any).systemInfo.html;
     <>
     <Layout> 
       <Link to ="/"><button><Undo/>Back</button></Link>
-    <div className="system-info">
-        <img className="system-image" src={systemInfo.img}></img>
-        <div className="system-data">
 
+    <div className="system-info">
+        <div className="system-data">
+          <GatsbyImage image={image as any} alt={systemInfo.name}/>
+        {/* <img className="system-image" src={`http://localhost:8000/static/ff1dcc92da5449ee129575d364b5dd97/f53ee/system.webp`}></img> */}
             <table className="system-table">
               <tbody>
               <tr>
@@ -218,9 +221,9 @@ export default IndexPage
 
 export const Head: HeadFC = ({ data }: HeadProps) => 
  {
-  const { name , developer} = (data as any).system;
-  return <MetaHead title={`00Games - ${developer} ${name}`} description={`VideoGames Database for ${developer} ${name}`} />;
-  // colocar img no meta
+  
+  const {name} = (data as any).system;
+  return <MetaHead title={`00Games - ${name}`} description={`VideoGames Database for ${name}`} />;
  }
 
 
@@ -231,16 +234,24 @@ export const pageQuery = graphql`
       fields {
         slug
       }
+      systemImage {
+        childImageSharp {
+          gatsbyImageData(
+            formats: [JPG, WEBP]
+            height: 200
+            quality: 10
+            
+          )
+        }
+      }
       type
       releaseDate
       rate
       name
-      img
       developer
     },
     games:
-    allMarkdownRemark(filter: {fields: {system: {eq: $system}}, frontmatter: {type: {eq: "Game"}}}) {
-      
+    allMarkdownRemark(filter: {fields: {system: {eq: $system}}, frontmatter: {type: {eq: "Game"}}} sort: {fields: frontmatter___name}) {  
     nodes {
       frontmatter {
         genre
@@ -249,9 +260,19 @@ export const pageQuery = graphql`
         name
         developer
         rate
-        releaseDate(locale: "pt-br", formatString: "")
+        releaseDate
         type
-        img
+        gameImage {
+        childImageSharp {
+          gatsbyImageData(
+            formats: [JPG, WEBP]
+            height: 500
+            quality: 10
+            aspectRatio:1
+            
+          )
+        }
+      }
       }
       fields {
         system
@@ -273,7 +294,6 @@ export const pageQuery = graphql`
       rate
       name
       logo
-      img
       generation
       developer
     }

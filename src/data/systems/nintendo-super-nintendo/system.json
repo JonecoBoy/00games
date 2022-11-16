@@ -1,0 +1,9 @@
+{
+        "type": "System",
+        "name":       "Super Nintendo",
+        "developer":      "Nintendo",
+        "generation":    "4th Generation",
+        "releaseDate":    1990,
+        "rate":    5,
+         "systemImage": "system.png"
+}

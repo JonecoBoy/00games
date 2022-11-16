@@ -1,0 +1,9 @@
+{
+        "type": "System",
+        "name":       "Playstation 2",
+        "developer":      "Sony",
+        "generation":    "6th Generation",
+        "releaseDate":    2000,
+        "rate":    5,
+         "systemImage": "system.png"
+}

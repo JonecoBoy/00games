@@ -3,10 +3,10 @@ type: "System"
 name: "GameCube"
 developer: "Nintendo"
 releaseDate: "2001-11-05"
-generation: 6
-img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/GameCube-Console-Set.png/640px-GameCube-Console-Set.png"
-logo: ""
+generation: "6th Generation"
+systemLogo: "logo.png"
 video: "https://www.youtube.com/watch?v=Dr7KeT7egH4"
+systemImage: "system.png"
 ---
 
 

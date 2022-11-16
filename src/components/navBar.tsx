@@ -84,7 +84,7 @@ const [open, setOpen] = React.useState(
       <AppBar position="static">
         <Toolbar>
           <IconButton
-            size="large"
+            size="medium"
             edge="start"
             color="inherit"
             aria-label="menu"
@@ -96,7 +96,7 @@ const [open, setOpen] = React.useState(
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}></Typography>
             <div>
               <IconButton
-                size="large"
+                size="medium"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleMenu}
@@ -146,40 +146,10 @@ const [open, setOpen] = React.useState(
               </Menu>
             </div>
             
-            {/* <div>
-              <IconButton
-                size="large"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu2}
-                color="inherit"
-              >
-                Top Games
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorE2}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorE2)}
-                onClose={handleClose2}
-              >
-                <MenuItem onClick={handleClose2}>Profile</MenuItem>
-                
-                
-                
-              </Menu>
-            </div> */}
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}></Typography>
             <div>
             <IconButton
-            size="large"
+            size="medium"
             edge="start"
             color="inherit"
             aria-label="menu"
@@ -191,7 +161,7 @@ const [open, setOpen] = React.useState(
 
             <div>
             <IconButton
-            size="large"
+            size="medium"
             edge="start"
             color="inherit"
             aria-label="menu"

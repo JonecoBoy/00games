@@ -95,6 +95,9 @@ const config: GatsbyConfig = {
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
 
   ]
 }

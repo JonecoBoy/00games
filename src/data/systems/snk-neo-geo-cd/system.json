@@ -1,0 +1,9 @@
+{
+        "type": "System",
+        "name":       "Neo Geo CD",
+        "developer":      "SNK",
+        "generation":    "4th Generation",
+        "releaseDate":    1994,
+        "rate":    5,
+         "systemImage": "system.png"
+}

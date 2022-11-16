@@ -8,10 +8,9 @@ genre: "Fighting"
 mode: "Up to 2 players"
 rate: 4.0
 screenshots: [1,2,3]
+gameImage: "sfa.jpg"
 video: "https://www.youtube.com/embed/TLwI7ZahySw"
 ---
-
-## teste H2
 
 ### sinopse
 Street Fighter Alpha: Warriors' Dreams, known as Street Fighter Zero[a] in Japan, Asia, South America, and Oceania, is a 2D arcade fighting game by Capcom originally released in 1995 for the CP System II hardware. It was the first all new Street Fighter game produced by Capcom since the release of Street Fighter II in 1991. The working title for the game was Street Fighter Legends.

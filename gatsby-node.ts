@@ -1,4 +1,5 @@
 import { GatsbyNode } from "gatsby";
+import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import { createFilePath } from "gatsby-source-filesystem";
 import { off } from "process";
 import * as slugLib from "slug";
@@ -53,7 +54,6 @@ export const onCreateNode : GatsbyNode['onCreateNode'] = async({actions,getNode,
 
     type systemParams={
         name:string;
-        img: string;
         slug: string;
         releaseDate:number;
         developer:string;
@@ -70,13 +70,31 @@ export const onCreateNode : GatsbyNode['onCreateNode'] = async({actions,getNode,
 if(node.internal.type === `Json`  && node.type === `System`){
  
         let slug = `${(node.developer as string).toLowerCase()}-${(node.name as string).toLowerCase()}`
+      
+        slug = slugLib(slug);
+
+
+
+        const fullPath = createFilePath({
+            getNode,
+            node,
+            trailingSlash:false
+        });
     
+        const path = fullPath.split(`/`);
+    
+        // createNodeField({
+        //     node,
+        //     name: 'Image',
+        //     value: image,
+        // });
         
-    createNodeField({
-        node,
-        name: 'slug',
-        value: slug,
-    });
+        createNodeField({
+            node,
+            name: 'slug',
+            value: slug,
+        });
+    
     
 
 
@@ -84,12 +102,15 @@ if(node.internal.type === `Json`  && node.type === `System`){
 
 
 if(node.internal.type === `MarkdownRemark` && (node.frontmatter as any).type === `Game`){
-                
-    const path = createFilePath({
+
+    const fullPath = createFilePath({
         getNode,
         node,
         trailingSlash:false
-    }).split(`/`)
+    });
+
+    
+    const path = fullPath.split(`/`);
 
     const fileName = path[path.length-1];
     const gameName = (node.frontmatter as any).name.toLowerCase()
@@ -110,23 +131,30 @@ if(node.internal.type === `MarkdownRemark` && (node.frontmatter as any).type ===
     });
 
 
+    createNodeField({
+        node,
+        name: 'Image',
+        value: `${fullPath}.jpg`,
+    });
+
+
 
 }
 
 
 if(node.internal.type === `MarkdownRemark` && (node.frontmatter as any).type === `System`){
                 
-    const path = createFilePath({
+    const fullPath = createFilePath({
         getNode,
         node,
         trailingSlash:false
-    }).split(`/`)
+    });
+    const path = fullPath.split(`/`);
 
     const {name ,developer}:{name:string,developer:string} = node.frontmatter as any
 
     const slug = slugLib(`${developer}-${name}`)
  
-    console.log(slug)
     
     createNodeField({
         node,
@@ -138,6 +166,12 @@ if(node.internal.type === `MarkdownRemark` && (node.frontmatter as any).type ===
         name: 'system',
         value: slug,
     });
+    // createNodeField({
+    //     node,
+    //     name: 'Image',
+    //     value: `${fullPath}.jpg`,
+    // });
+
 
 
 

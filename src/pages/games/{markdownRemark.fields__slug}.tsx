@@ -3,18 +3,23 @@ import { graphql, HeadFC, HeadProps, Link, PageProps } from "gatsby"
 import Layout from "../../layout/Layout";
 import {Undo} from '@mui/icons-material/';
 import { MetaHead } from "../../components/MetaHead";
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 const gamesPage = ({data} : PageProps<any>) => {
     const game = {...data.game.frontmatter,...data.game.fields}
     game.html = data.game.html
-    
+    const size=700;
+    const image = getImage(game.gameImage as IGatsbyImageData);
+
+
     return(
         <>
         <Layout>
         <Link to ={`/systems/${game.system}`}><button><Undo/>Back</button></Link>
         <h1>{game.name}</h1>
           <div className="technical">
-            <img src ={game.img}></img>
+          <GatsbyImage image={image as any} alt={game.name}/>
+            {/* <img src ={`http://localhost:8000/static/fd5a3e12bb854711f3539a8aeac80dd9/febde/twisted%20metal.webp`}></img> */}
             <div className="text">
             <p>Release Date: {game.releaseDate}</p>
             <p>Developer: {game.developer}</p>
@@ -38,7 +43,7 @@ const gamesPage = ({data} : PageProps<any>) => {
           <style jsx global>
           {`
   
-        .technical img{
+        .gatsimg{
             max-width: 100%;
               height: auto;
               margin:auto;
@@ -152,14 +157,22 @@ export const pageQuery = graphql`
       rate
       name
       logo
-      img
       generation
       developer
       platforms
       genre
       mode
       screenshots
-
+      gameImage {
+        childImageSharp {
+          gatsbyImageData(
+            formats: [JPG, WEBP]
+            height: 600
+            quality: 10
+            
+          )
+        }
+      }
     }
   }
   },

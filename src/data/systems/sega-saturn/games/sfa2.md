@@ -8,10 +8,10 @@ genre: "Fighting"
 mode: "Up to 2 players"
 rate: 4.5
 screenshots: [1,2,3]
+gameImage: "sfa2.jpg"
 video: "https://www.youtube.com/embed/TLwI7ZahySw"
 ---
 
-## teste H2
 
 ### sinopse
 Street Fighter Alpha 2, known as Street Fighter Zero 2[a] in Japan, Asia, South America, and Oceania, is a 1996 fighting game originally released for the CPS II arcade hardware by Capcom. The game is a remake to the previous year's Street Fighter Alpha: Warriors' Dreams. The game features a number of improvements over the original, such as new attacks, stages, endings, and gameplay features. It was followed by Street Fighter Alpha 3.

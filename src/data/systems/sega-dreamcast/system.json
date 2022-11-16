@@ -1,0 +1,9 @@
+{
+        "type": "System",
+        "name":       "Dreamcast",
+        "developer":      "Sega",
+        "generation":    "6th Generation",
+        "releaseDate":    1998,
+        "rate":    5,
+         "systemImage": "system.png"
+}

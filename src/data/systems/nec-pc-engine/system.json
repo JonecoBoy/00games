@@ -1,0 +1,9 @@
+{
+        "type": "System",
+        "name":       "Pc Engine",
+        "developer":      "NEC",
+        "generation":    "4th Generation",
+        "releaseDate":    1987,
+        "rate":    5,
+        "systemImage": "system.png"
+}

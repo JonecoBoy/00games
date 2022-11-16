@@ -2,8 +2,8 @@
         "type": "System",
         "name":       "GameCube",
         "developer":      "Nintendo",
-        "generation":    6,
+        "generation":    "6th Generation",
         "releaseDate":    2001,
         "rate":    3.5,
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/GameCube-Console-Set.png/640px-GameCube-Console-Set.png"
+         "systemImage": "system.png"
 }

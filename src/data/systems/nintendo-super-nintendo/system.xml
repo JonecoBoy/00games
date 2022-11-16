@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+  <name>Playstation</name>
+  <developer>Sony</developer>
+  <generation>5</generation>
+  <realeaseDate>1994</realeaseDate>
+  <rate>5</rate>
+  <img>https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/640px-PSX-Console-wController.png</img>
+</system>

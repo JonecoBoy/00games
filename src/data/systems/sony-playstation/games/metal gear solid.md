@@ -7,13 +7,11 @@ platforms: "PlayStation Microsoft Windows"
 genre: "Action, Adventure, Stealth"
 mode: "Single Player"
 rate: 5
-img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Ffd%2F6a%2F43%2Ffd6a4384bccbe4b4935fed57b393aac4.jpg"
 screenshots: [1,2,3]
 logo: ""
+gameImage: "metal gear solid.jpg"
 video: "https://www.youtube.com/watch?v=_zrvEmP41-s"
 ---
-
-## teste H2
 
 ### sinopse
 Twisted Metal is a vehicular combat video game developed by SingleTrac, produced by Sony Interactive Studios America, and published by Sony Computer Entertainment for the PlayStation. The game was released in North America on November 5, 1995, in Europe on January 13 and in Japan on November 15, 1996. The North American version was re-released for the Sony Greatest Hits line-up on March 3, 1997.[1] It is the first installment in the Twisted Metal series. The game's plot is centered on the titular competition in which various drivers in modified vehicles must destroy the other vehicles in an attempt to be the last one alive. The winner meets the organizer of the competition, a mysterious man named Calypso, who will grant the winner a single wish, regardless of price, size or even reality.

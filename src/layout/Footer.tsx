@@ -15,6 +15,7 @@ const Footer =()=>{
                 background-color: #8590AA;
                 padding:20px 0px 20px 0px;
                 width:100%;
+                min-width:465px;
 
                 position:relative;
                 bottom: 0;

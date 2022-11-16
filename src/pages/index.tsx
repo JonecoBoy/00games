@@ -4,6 +4,7 @@ import Layout from "../layout/Layout"
 import Card from "../components/card"
 import { cardParams } from "../components/card"
 import { MetaHead } from "../components/MetaHead"
+import { Alert } from "@mui/material"
 
 
 
@@ -18,19 +19,36 @@ import { MetaHead } from "../components/MetaHead"
   }
 
 const IndexPage = ({data} : PageProps<DataProps>) => {
-  const systems = data.allJson.nodes;
+ 
+  let systems = (data as any).info.nodes;
+  const counters = (data as any).count.group;
+
+systems.forEach((system:any)=>{
+  counters.forEach((counter:any)=>{
+    
+    if(system.fields.slug == counter.fieldValue){
+      
+      system.totalCount=counter.totalCount ?? 0
+    }
+  })
+  
+
+})
+  
+
 
   return (
     <>
     <Layout>
       <h1>Sistemas</h1>
       <div className="cards">
-        {systems.map((item:any)=>{
+        {systems.map((item:any,index:number)=>{
           let system:cardParams = item
           system = {...item,...item.fields}
-          return <Card cardParams={system}></Card>
+          return <Card key={index} cardParams={system}></Card>
         })}
       </div>
+      
       </Layout>
     <style jsx>
         {`
@@ -56,18 +74,37 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allJson(filter: {type: {eq: "System"}}) {
+    info:allJson(filter: {type: {eq: "System"}}, sort: {order: ASC, fields: releaseDate}) {
+      totalCount
       nodes {
         type
         name
         rate
         releaseDate
-        img
+        generation
+        developer
+        systemImage {
+        childImageSharp {
+          gatsbyImageData(
+            formats: [JPG, WEBP]
+            height: 500
+            aspectRatio: 1.5
+            quality: 6
+            
+          )
+        }
+      }
         fields {
         slug
       }
       }
+    },
+    count:allMarkdownRemark(filter: {frontmatter: {type: {eq: "Game"}}}) {
+    group(field: fields___system) {
+      totalCount
+      fieldValue
     }
+  }
   }
 `
 

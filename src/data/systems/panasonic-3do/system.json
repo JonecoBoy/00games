@@ -1,0 +1,9 @@
+{
+        "type": "System",
+        "name":       "3DO",
+        "developer":      "Panasonic",
+        "generation":    "5th Generation",
+        "releaseDate":    1993,
+        "rate":    4,
+         "systemImage": "system.png"
+}

@@ -14,6 +14,7 @@ return (
 
 <style jsx>
 { `
+        
         header{
                 color:white;
                 width:100%;
@@ -22,6 +23,7 @@ return (
                 box-sizing: content-box;
                 min-width:450px;
                 top: 0;
+                z-index: 10;
         }
         .flex-container{
                 display: flex; 

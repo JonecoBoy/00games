@@ -3,9 +3,9 @@ type: "System"
 name: "Playstation"
 developer: "Sony"
 releaseDate: "1994-11-05"
-generation: 5
-img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/640px-PSX-Console-wController.png"
-logo: ""
+generation: "5th Generation"
+systemImage: "system.png"
+systemLogo: "logo.png"
 video: "https://www.youtube.com/watch?v=Dr7KeT7egH4"
 ---
 

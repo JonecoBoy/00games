@@ -1,0 +1,9 @@
+{
+        "type": "System",
+        "name":       "Neo Geo AES",
+        "developer":      "SNK",
+        "generation":    "4th Generation",
+        "releaseDate":    1991,
+        "rate":    5,
+         "systemImage": "system.png"
+}

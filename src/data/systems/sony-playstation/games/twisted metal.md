@@ -8,8 +8,8 @@ genre: "Vehicular Combat"
 mode: "Up to 2 players"
 rate: 3.5
 screenshots: [1,2,3]
-img: "https://www.mobygames.com/images/covers/l/16698-twisted-metal-playstation-front-cover.jpg"
 logo: ""
+gameImage: "twisted metal.jpg"
 video: "https://www.youtube.com/watch?v=Dr7KeT7egH4"
 ---
 
