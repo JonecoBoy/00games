@@ -8,7 +8,7 @@ const contact = ()=>{
   return (
     <Layout>
         <div className='background-form'>
-        TODO, pagina sobre com foto e infos do site
+          Video Game Database for lot of different systems.
     </div>
     </Layout>
   );

@@ -18,8 +18,8 @@ import { Alert } from "@mui/material"
       }
   }
 
-const IndexPage = ({data} : PageProps<DataProps>) => {
- 
+const IndexPage = ({data,location} : {data:PageProps<DataProps>,location:any}) => {
+  const message = location.state.message;
   let systems = (data as any).info.nodes;
   const counters = (data as any).count.group;
 
@@ -40,6 +40,7 @@ systems.forEach((system:any)=>{
   return (
     <>
     <Layout>
+    {message && <Alert variant="filled" severity="success">{message}</Alert>}
       <h1>Sistemas</h1>
       <div className="cards">
         {systems.map((item:any,index:number)=>{

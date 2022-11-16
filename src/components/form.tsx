@@ -1,4 +1,5 @@
 import { Alert } from '@mui/material';
+import { navigate } from 'gatsby';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -20,11 +21,9 @@ const Form = ({title}:{title:string})=>{
 
             }
         ).then((response)=>{
-            console.log(response);
-            // quer dizer que foi
-            alert('Mensagem Enviada com sucesso')
-            window.location.href = "/";
-            
+
+            navigate('/',{
+                state: { message: 'Message Successfully sent!' }})
         }).catch((e)=>{
             console.log(e)
         });
