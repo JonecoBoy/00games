@@ -17,7 +17,7 @@ const contact = ()=>{
 .background-form{
   background-color: rgba(81, 98, 213, 1);
   padding:15px;
-  max-width:50%;
+  max-width:60%;
   display:flex;
   justify-content:center;
   justify-items:center;
